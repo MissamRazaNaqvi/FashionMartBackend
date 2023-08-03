@@ -5,7 +5,7 @@ const { getAddress, deleteAddress, placeOrder, addAddress } = require('../contro
 const { addToCart, cartItem, deleteCartItem } = require('../controller/cartController')
 
 const routes = express.Router()
-
+routes.get('/', (req, res) => { res.send('WELCOME TO FASHION MART BACKEND') })
 routes.get('/products', getAllProduct)
 routes.get('/products/:id', getProductBuId)
 
