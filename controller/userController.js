@@ -19,7 +19,7 @@ module.exports.login = async (req, res) => {
                 // console.log('success')
                 const token = jwt.sign({ id: user.id }, "authtoken")
                 // console.log(token);
-                return res.cookie('authtoken', token, { expires: new Date(Date.now() + 25892000000), httpOnly: true,secure:true }).json({ statusText: 'OK' })
+                return res.cookie('authtoken', token, { expires: new Date(Date.now() + 25892000000), httpOnly: true,secure:true,sameSite:"none" }).json({ statusText: 'OK' })
             }
             else {
                 console.log('Not Allowed')
